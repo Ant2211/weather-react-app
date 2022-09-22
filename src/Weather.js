@@ -38,6 +38,9 @@ export default function Weather() {
   if (loaded) {
     return (
       <div>
+        <div>
+            <h1>{city}</h1>
+        </div>
         {form}
         <ul>
           <li>Temperature: {Math.round(weather.temperature)}°C</li>
