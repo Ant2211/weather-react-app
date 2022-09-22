@@ -5,7 +5,7 @@ import "./weatherstyle.css";
 
 export default function App() {
     return (
-        <div className = "app">
+        <div className = "App">
             <Weather />
         </div>
     )
