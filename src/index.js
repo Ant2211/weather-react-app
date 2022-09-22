@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Weather from "./Weather.js"
+import Weather from "./Weather.js";
+import App from "./App.js";
 import reportWebVitals from './reportWebVitals';
 import "./weatherstyle.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Weather />
+    <App />
   </React.StrictMode>
 );
 
