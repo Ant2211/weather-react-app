@@ -56,24 +56,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    return (
-        <div>
-            <div className="row">
-            <div className="col-6">
-            <ul>
-               <li> <h1> Kyiv </h1></li>
-            <li>Temperature: 20 °C</li>
-            </ul>
-            </div>
-            <div className="col-6">
-            <ul>
-                   <li>Humidity: 50 %</li>
-          <li>Wind: 0 km/h</li>
-          </ul>
-        </div>
-        </div>
-        </div>
-    )
+    return form;
     }
   
 }

@@ -73,6 +73,14 @@
     padding: 5px 20px;
     margin: 20px 20px;
   }
+  .current {
+    color: white;
+    background: rgb(6, 73, 32);
+    border: 1px solid rgb(2, 2, 65);
+    border-radius: 15px;
+    padding: 5px 20px;
+    margin: 20px 20px;
+  }
   
   .forecast {
     margin-top: 20px;
