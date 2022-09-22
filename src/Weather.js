@@ -55,7 +55,24 @@ export default function Weather() {
       </div>
     );
   } else {
-    return form;
+    return (
+        <div>
+            <div class = "row">
+            <div class = "col-6">
+            <ul>
+               <li> <h1> Kyiv </h1></li>
+            <li>Temperature: 20 °C</li>
+            </ul>
+            </div>
+            <div class="col-6">
+            <ul>
+                   <li>Humidity: 50 %</li>
+          <li>Wind: 0 km/h</li>
+          </ul>
+        </div>
+        </div>
+        </div>
+    )
   }
   function searchLocation(position) {
     let apiKey = "e0011d9afadcdf29795388bf3f4d5677";
