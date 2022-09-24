@@ -41,23 +41,25 @@ export default function Weather() {
     return (
       <div>
                 {form}
+                <div className="container">
                 <div className = "row">
                 <div className = "col-6">
             <ul>
 <li><h1>{city}</h1></li>
            
-          <li> <h2> {Math.round(weather.temperature)}°C </h2></li>
+          <li> 
+                <h2>        <img src={weather.icon} alt={weather.description} className="icon"/>
+           {Math.round(weather.temperature)}°C </h2> </li>
         </ul>
         </div>
         <div className = "col-6">
-        <ul>
+        <ul className="description-weather">
           <li>{weather.description}</li>
           <li>Humidity: {weather.humidity}%</li>
           <li>Wind: {weather.wind}km/h</li>
-          <li>
-            <img src={weather.icon} alt={weather.description} />
-          </li>
+          
         </ul>
+        </div>
         </div>
         </div>
       </div>
