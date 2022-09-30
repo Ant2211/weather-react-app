@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate.js";
+import "bootstrap/dist/css/bootstrap.css";
 import "./weatherstyle.css";
 
 export default function Weather() {
-  const [city, setCity] = useState("");
-  const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState({});
+    const [city,setCity] = useState("");  
+  const [weather, setWeather] = useState({loaded:false});
 
   function displayWeather(response) {
-    setLoaded(true);
-    setWeather({
-      temperature: response.data.main.temp,
+        setWeather({
+            loaded: true,
+            date: new Date(response.data.dt * 1000),
+            temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
@@ -34,10 +36,10 @@ export default function Weather() {
       <input type="search" placeholder="Enter a city.." className="input-city" onChange={updateCity} />
       <input type="Submit" value="Search" className="search" />
       <input type="Submit" value="Current" className="current" />
-    </form>
+       </form>
   );
 
-  if (loaded) {
+  if (weather.loaded) {
     return (
       <div>
                 {form}
@@ -45,11 +47,10 @@ export default function Weather() {
                 <div className = "row">
                 <div className = "col-6">
             <ul>
-<li><h1>{city}</h1></li>
-           
-          <li> 
-                <h2>        <img src={weather.icon} alt={weather.description} className="icon"/>
+<li><h1 className="text-capitalize">{city}</h1></li>
+<li> <h2> <img src={weather.icon} alt={weather.description} className="icon"/>
            {Math.round(weather.temperature)}°C </h2> </li>
+        <li> <FormattedDate date={weather.date}/> </li>
         </ul>
         </div>
         <div className = "col-6">
