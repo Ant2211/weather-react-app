@@ -43,8 +43,7 @@ export default function Weather(props) {
     <form className="input" onSubmit={handleSubmit}>
       <input type="search" placeholder="Enter a city.." className="input-city" autofocus="on" onChange={updateCity} />
       <input type="Submit" value="Search" className="search" />
-      <input type="Submit" value="Current" className="current" />
-       </form>
+      </form>
   );
 
   if (weather.loaded) {
